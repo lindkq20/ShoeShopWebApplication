@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/TemplateHeader/css")
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
+    <div class="wrapper">
+        <header class="main-header">
+            <nav class="navbar navbar-static-top">
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu"></ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    Super Zapatos
+                    <small>Panel Administrativo</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Panel Admistrativo</li>
+                </ol>
+            </section>
+            <section class="content">
+                @RenderBody()
+            </section>
+</div>
+        <footer class="main-footer"></footer>
+    </div>
+
+    @Scripts.Render("~/TemplateFooter/js")
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>

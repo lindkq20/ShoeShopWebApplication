@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDShoeShopModelStoreContainer" CdmEntityContainer="BDShoeShopEntities">
+    <EntitySetMapping Name="articles">
+      <EntityTypeMapping TypeName="BDShoeShopModel.articles">
+        <MappingFragment StoreEntitySet="articles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="total_in_shelf" ColumnName="total_in_shelf" />
+          <ScalarProperty Name="total_in_vault" ColumnName="total_in_vault" />
+          <ScalarProperty Name="store_id" ColumnName="store_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stores">
+      <EntityTypeMapping TypeName="BDShoeShopModel.stores">
+        <MappingFragment StoreEntitySet="stores">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

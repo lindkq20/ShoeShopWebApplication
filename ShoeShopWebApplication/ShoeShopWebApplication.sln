@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26206.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoeShopWebApi", "ShoeShopWebApplication\ShoeShopWebApi.csproj", "{A080C4FD-F614-4074-B959-03AD391D89C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoeShopWeb", "ShoeShopWeb\ShoeShopWeb.csproj", "{83F4DCA9-B1E0-4DAF-A71F-7F78C1B4A993}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A080C4FD-F614-4074-B959-03AD391D89C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A080C4FD-F614-4074-B959-03AD391D89C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A080C4FD-F614-4074-B959-03AD391D89C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A080C4FD-F614-4074-B959-03AD391D89C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83F4DCA9-B1E0-4DAF-A71F-7F78C1B4A993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F4DCA9-B1E0-4DAF-A71F-7F78C1B4A993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83F4DCA9-B1E0-4DAF-A71F-7F78C1B4A993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83F4DCA9-B1E0-4DAF-A71F-7F78C1B4A993}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

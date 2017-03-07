@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ShoeShopWeb.Models.clsArticles>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="box box-danger">
+        <div class="box-header with-border">
+            <h2 class="box-title">Lista de articulos</h2>         
+        </div>
+        <div class="box-body">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="col-md-12 container text-left">
+                        @Html.ActionLink(" Nuevo", "Create", null, new { @class = "btn btn-primary glyphicon glyphicon-plus-sign" })
+                    </div>
+                    <br><br>
+                        <div class="col-md-12">
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>
+                                        Nombre
+                                    </th>
+                                    <th>
+                                        Descripcion
+                                    </th>
+                                    <th>
+                                        Disponibles
+                                    </th>
+                                    <th>
+                                        En Bodega
+                                    </th>
+                                    <th>
+                                        Tienda
+                                    </th>
+                                    <th></th>
+                                </tr>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.description)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.total_in_shelf)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.total_in_vault)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.store_id)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink(" ", "Edit", new { id = item.id }, new { @class = "btn btn-success btn-md glyphicon glyphicon-edit", title = "Editar" })
+                                            @Html.ActionLink(" ", "Delete", new { id = item.id }, new { @class = "btn btn-danger btn-md  glyphicon glyphicon-trash",  title = "Eliminar" })
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+ </div>
+

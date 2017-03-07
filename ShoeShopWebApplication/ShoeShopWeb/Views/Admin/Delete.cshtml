@@ -1,0 +1,68 @@
+﻿@model ShoeShopWeb.Models.clsArticles
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <h4>El siguiete articulo será eliminado.¿Desea continuar?</h4>
+    </div>
+    <div class="box-body">       
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.LabelFor(model => model.name, "Nombre : ")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.name)
+                </dd>
+
+                <dt>
+                    @Html.LabelFor(model => model.description, "Descripción : ")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.description)
+                </dd>
+
+                <dt>
+                    @Html.LabelFor(model => model.total_in_shelf, "Disponible : ")                  
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.total_in_shelf)
+                </dd>
+
+                <dt>
+                    @Html.LabelFor(model => model.total_in_vault, "En bodega : ")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.total_in_vault)
+                </dd>
+
+                <dt>
+                    @Html.LabelFor(model => model.store_id, "Tienda : ")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.store_id)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar" class="btn btn-primary" /> |
+                    @Html.ActionLink("Regresar", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

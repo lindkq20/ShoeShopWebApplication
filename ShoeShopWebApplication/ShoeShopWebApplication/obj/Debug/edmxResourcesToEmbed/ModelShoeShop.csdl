@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDShoeShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="articles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="total_in_shelf" Type="Int32" />
+    <Property Name="total_in_vault" Type="Int32" />
+    <Property Name="store_id" Type="Int32" />
+    <NavigationProperty Name="stores" Relationship="Self.FK_articles_stores" FromRole="articles" ToRole="stores" />
+  </EntityType>
+  <EntityType Name="stores">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="articles" Relationship="Self.FK_articles_stores" FromRole="stores" ToRole="articles" />
+  </EntityType>
+  <Association Name="FK_articles_stores">
+    <End Role="stores" Type="Self.stores" Multiplicity="0..1" />
+    <End Role="articles" Type="Self.articles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stores">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="articles">
+        <PropertyRef Name="store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDShoeShopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="articles" EntityType="Self.articles" />
+    <EntitySet Name="stores" EntityType="Self.stores" />
+    <AssociationSet Name="FK_articles_stores" Association="Self.FK_articles_stores">
+      <End Role="stores" EntitySet="stores" />
+      <End Role="articles" EntitySet="articles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
